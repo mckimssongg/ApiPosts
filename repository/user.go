@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"fmt"
 	"rest-wsgo/models"
 )
 
@@ -18,6 +19,9 @@ func SetRepository(repository UserRepository) {
 }
 
 func IntertUser(ctx context.Context, user *models.User) error {
+	if implementation == nil {
+		return fmt.Errorf("user repository implementation not set")
+	}
 	return implementation.InsertUser(ctx, user)
 }
 

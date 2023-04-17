@@ -47,6 +47,7 @@ func SingnUpHandler(s server.Server) http.HandlerFunc {
 			Password: request.Password,
 		}
 
+		// la variable "implementation" ha sido correctamente inicializad
 		err = repository.IntertUser(r.Context(), &user)
 
 		if err != nil {

@@ -13,3 +13,15 @@ create the container
 ```bash
 docker run -p 54321:5432 post-db
 ```
+
+download dependencies:
+
+```bash
+go mod download
+```
+
+run:
+
+```bash
+go run main.go 
+```

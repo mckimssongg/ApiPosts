@@ -29,11 +29,12 @@ func (repo *PostgresRepository) InsertUser(
 	_, err := repo.db.ExecContext(
 		ctx,
 		`INSERT INTO users (
+			id,
 			email,
 			password
 		) VALUES 
 		(
-			$1, $2
+			$1, $2, $3
 		)`,
 		user.Email,
 		user.Password,
