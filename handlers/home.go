@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+
 	"rest-wsgo/server"
 )
 
@@ -16,7 +17,7 @@ func HomeHandler(s server.Server) http.HandlerFunc {
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
 		json.NewEncoder(w).Encode(HomeResponse{
-			Message: "Welcome to ApiPosts",
+			Message: "Welcome to Platzi Go",
 			Status:  true,
 		})
 	}
